@@ -56,8 +56,8 @@ curl -O http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qco
 source keystonerc_admin
 
 # Load the VM image into the store and make it available for creating VMs
-glance image-create --name centos72 --is-public True \
-  --disk-format qcow2 --container-format bare \
+glance image-create --name centos72 --visibility public \
+  --disk-format qcow2 --container-format bare --progress \
   --file CentOS-7-x86_64-GenericCloud.qcow2
 
 # Install the current user's SSH key for access to VMs
